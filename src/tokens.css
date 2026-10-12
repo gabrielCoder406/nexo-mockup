@@ -1,0 +1,71 @@
+/* Layout: ventana de navegador simulada que ocupa la pantalla; el portal hace scroll dentro de ella.
+   Lista de solicitudes + semáforo a la derecha; el formulario entra como panel lateral dentro de la ventana. */
+:root {
+  /* Color: verde institucional de la presentación NEXO, verde de acción, neutros con sesgo verde, semáforo semántico */
+  --canvas: 212 223 217;
+  --page: 245 248 246;
+  --surface: 255 255 255;
+  --surface-2: 236 242 239;
+  --ink: 17 32 27;
+  --muted: 84 102 95;
+  --line: 217 226 221;
+  --brand: 22 82 50;
+  --brand-ink: 233 244 238;
+  --brand-soft: 221 238 227;
+  --brand-text: 20 90 52;
+  --cta: 21 128 70;
+  --cta-hover: 16 108 58;
+  --cta-text: 17 112 61;
+  --on-cta: 255 255 255;
+  --weft: 125 214 162;
+  --housing: 20 33 29;
+  --lamp-off: 52 68 62;
+  --crit: 185 40 34;
+  --crit-dot: 230 57 47;
+  --crit-soft: 252 233 231;
+  --mid: 146 95 0;
+  --mid-dot: 245 180 20;
+  --mid-soft: 253 243 214;
+  --low: 28 112 63;
+  --low-dot: 46 184 102;
+  --low-soft: 222 244 231;
+  --chrome: 224 231 227;
+  --chrome-2: 247 250 248;
+  --scrim: 8 22 17;
+  --shadow: 9 38 28;
+  /* Tipografía: la misma display que la presentación del taller, cuerpo legible, mono para números de ticket */
+  --font-display: "Plus Jakarta Sans", "Public Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Public Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --canvas: 5 10 8; --page: 10 18 15; --surface: 16 28 24; --surface-2: 24 40 34;
+    --ink: 228 238 233; --muted: 146 166 157; --line: 36 54 47;
+    --brand: 13 46 29; --brand-ink: 226 240 233; --brand-soft: 22 58 40; --brand-text: 130 206 166;
+    --cta: 37 168 96; --cta-hover: 48 186 110; --cta-text: 104 214 150; --on-cta: 4 24 14;
+    --weft: 104 214 150; --housing: 4 9 7; --lamp-off: 34 46 41;
+    --crit: 248 122 112; --crit-dot: 239 68 58; --crit-soft: 66 24 22;
+    --mid: 240 190 80; --mid-dot: 245 182 30; --mid-soft: 60 45 12;
+    --low: 112 210 150; --low-dot: 52 196 110; --low-soft: 18 56 36;
+    --chrome: 13 23 19; --chrome-2: 20 34 29; --scrim: 0 0 0; --shadow: 0 0 0;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --canvas: 5 10 8; --page: 10 18 15; --surface: 16 28 24; --surface-2: 24 40 34;
+  --ink: 228 238 233; --muted: 146 166 157; --line: 36 54 47;
+  --brand: 13 46 29; --brand-ink: 226 240 233; --brand-soft: 22 58 40; --brand-text: 130 206 166;
+  --cta: 37 168 96; --cta-hover: 48 186 110; --cta-text: 104 214 150; --on-cta: 4 24 14;
+  --weft: 104 214 150; --housing: 4 9 7; --lamp-off: 34 46 41;
+  --crit: 248 122 112; --crit-dot: 239 68 58; --crit-soft: 66 24 22;
+  --mid: 240 190 80; --mid-dot: 245 182 30; --mid-soft: 60 45 12;
+  --low: 112 210 150; --low-dot: 52 196 110; --low-soft: 18 56 36;
+  --chrome: 13 23 19; --chrome-2: 20 34 29; --scrim: 0 0 0; --shadow: 0 0 0;
+  color-scheme: dark;
+}
+html, body, #root { height: 100%; }
+body { background: rgb(var(--canvas)); color: rgb(var(--ink)); font-family: var(--font-body); font-size: 14px; -webkit-font-smoothing: antialiased; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
